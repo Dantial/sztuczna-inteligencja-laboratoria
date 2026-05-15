@@ -26,7 +26,7 @@ Obserwacje z badań opierają się na metodycznym podziale testów na cztery gł
 <img width="945" height="283" alt="image" src="https://github.com/user-attachments/assets/dd161764-eb9a-4e9e-82dd-19b8218f1821" />
 <img width="697" height="291" alt="image" src="https://github.com/user-attachments/assets/2353c3dd-beef-48ef-8fa0-8b6aafcc9ad8" />
 
-5) GRU z Early Stopping
+4) GRU z Early Stopping
 <img width="945" height="452" alt="image" src="https://github.com/user-attachments/assets/62e08d01-43e6-4312-a1b5-2aa88e1b9dcb" />
 <img width="945" height="829" alt="image" src="https://github.com/user-attachments/assets/7b89b7f9-5888-43ee-85b5-ac20ae88f485" />
 <img width="945" height="384" alt="image" src="https://github.com/user-attachments/assets/9493abde-693f-47d2-b055-0b48ce5aa405" />
@@ -47,10 +47,10 @@ Ilość units: 100
 
 Uzasadnienie:
 Taka konfiguracja osiągnęła ostateczny błąd średniokwadratowy (RMSE) równy 1.66, z powodzeniem spełniając założenie zadania (RMSE < 2.0). Konkurencyjny model GRU z dokładnie tymi samymi parametrami osiągnął wynik gorszy (RMSE = 1.80).
-Ilość jednostek (100 units): Zwiększona liczba jednostek ukrytych zapewniła sieci odpowiednią "pojemność" pamięci, umożliwiając wyłapanie subtelniejszych długoterminowych zależności w cenach akcji IBM (kolumna Close).
+Ilość jednostek (100 units): Zwiększona liczba jednostek ukrytych zapewniła sieci odpowiednią „pojemność” pamięci, umożliwiając wyłapanie subtelniejszych długoterminowych zależności w cenach akcji IBM (kolumna Close).
 Optymalizator (Adam): Pozwolił na niezwykle płynne adaptowanie szybkości uczenia do danych, bez ryzyka utknięcia w suboptymalnym minimum lokalnym.
 Funkcja straty (Huber): Działa jako świetny kompromis pomiędzy błędem MSE i MAE. Funkcja Hubera jest znacznie mniej wrażliwa na gwałtowne odchylenia (outliery), które są naturalnym zjawiskiem na rynku giełdowym, dzięki czemu uczenie odbywało się stabilniej.
-Powstrzymanie przetrenowania: Dołączenie do treningu (zgodnie z przygotowanymi wywołaniami callbacks) mechanizmu EarlyStopping zapobiega "pamięciowemu" przyswajaniu danych przez model. Dzięki walidacji (validation_split=0.1) wagi powracają do swojej najlepszej formy.
+Powstrzymanie przetrenowania: Dołączenie do treningu (zgodnie z przygotowanymi wywołaniami callbacks) mechanizmu EarlyStopping zapobiega „pamięciowemu” przyswajaniu danych przez model. Dzięki walidacji (validation_split=0.1) wagi powracają do swojej najlepszej formy.
 
 # Prędkość działania: GRU a LSTM
 Z logów środowiska wykonawczego jednoznacznie wynika, że architektura GRU działała zauważalnie szybciej na poziomie przetwarzania poszczególnych partii danych (batchy).
